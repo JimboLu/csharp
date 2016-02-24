@@ -1,72 +1,123 @@
 ﻿using System;
 
+/// <summary>
+/// Person类
+/// 
+/// </summary>
 public class Person
 {
-    public string sex { get; private set; }
+    /// <summary>
+    /// 性别
+    /// </summary>
+    public string Sex { get; private set; }
 
-    public int age { get; private set; }
+    /// <summary>
+    /// 年龄
+    /// </summary>
+    public int Age { get; private set; }
 
-    public float height { get; private set; }
+    /// <summary>
+    /// 身高
+    /// </summary>
+    public float Height { get; private set; }
 
-    public float weight { get; private set; }
+    /// <summary>
+    /// 体重
+    /// </summary>
+    public float Weight { get; private set; }
 
-    public delegate void ChangedSexHandler(string sex);
+    delegate void ChangedSexHandler(string sex);
 
-    public delegate void ChangedAgeHandler(int age);
+    delegate void ChangedAgeHandler(int age);
 
-    public delegate void ChangedHeightHandler(float height);
+    delegate void ChangedHeightHandler(float height);
 
-    public delegate void ChangedWeightHandler(float weight);
+    delegate void ChangedWeightHandler(float weight);
 
-    public event ChangedSexHandler changedSex;
+    /// <summary>
+    /// 性别发生改变
+    /// </summary>
+    public event ChangedSexHandler ChangedSex;
 
-    public event ChangedAgeHandler changedAge;
+    /// <summary>
+    /// 年龄发生改变
+    /// </summary>
+    public event ChangedAgeHandler ChangedAge;
 
-    public event ChangedHeightHandler changedHeight;
+    /// <summary>
+    /// 身高发生改变
+    /// </summary>
+    public event ChangedHeightHandler ChangedHeight;
 
-    public event ChangedWeightHandler changedWeight;
+    /// <summary>
+    /// 体重发生改变
+    /// </summary>
+    public event ChangedWeightHandler ChangedWeight;
 
+    /// <summary>
+    /// 构造函数
+    /// </summary>
+    /// <param name="sex">性别</param>
+    /// <param name="age">年龄</param>
+    /// <param name="height">身高</param>
+    /// <param name="weight">体重</param>
     public Person(string sex, int age, float height, float weight)
     {
-        this.sex = sex;
-        this.age = age;
-        this.height = height;
-        this.weight = weight;
+        this.Sex = sex;
+        this.Age = age;
+        this.Height = height;
+        this.Weight = weight;
     }
 
+    /// <summary>
+    /// 性别发生改变
+    /// </summary>
+    /// <param name="sex"></param>
     public void SetSex(string sex)
     {
-        this.sex = sex;
-        if(null != changedSex)
+        this.Sex = sex;
+        if(null != ChangedSex)
         {
-            changedSex(sex);
+            ChangedSex(sex);
         }
     }
 
+    /// <summary>
+    /// 年龄发生改变
+    /// </summary>
+    /// <param name="age"></param>
     public void SetAge(int age)
     {
-        this.age = age;
-        if (null != changedAge)
+        this.Age = age;
+        if (null != ChangedAge)
         {
-            changedAge(age);
+            ChangedAge(age);
         }
     }
 
+    /// <summary>
+    /// 身高发生改变
+    /// </summary>
+    /// <param name="height"></param>
     public void SetHeight(float height)
     {
-        this.height = height;
-        if (null != changedHeight)
+        this.Height = height;
+        if (null != ChangedHeight)
         {
-            changedHeight(height);
+            ChangedHeight(height);
         }
     }
 
+    /// <summary>
+    /// 体重发生改变
+    /// </summary>
+    /// <param name="weight"></param>
     public void SetWeight(float weight)
     {
-        this.weight = weight;
-        if (null != changedWeight)
+        this.Weight = weight;
+        if (null != ChangedWeight)
         {
-            changedWeight(weight);
+            ChangedWeight(weight);
         }
     }
 }

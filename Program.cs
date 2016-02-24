@@ -2,38 +2,46 @@
 using System.Collections.Generic;
 using System.Text;
 
+/// <summary>
+/// 1、Dictionary<T,T>、List<T>、HashSet<T>性能测试。
+/// 2、反射测试。
+/// </summary>
 class Program
 {
     static void Main(string[] args)
     {
+        // 实例化
         Dictionary<string, string> dictionary = new Dictionary<string, string>();
-        dictionary.Clear();
         List<string> list = new List<string>();
-        list.Clear();
         HashSet<string> hashSet = new HashSet<string>();
-        hashSet.Clear();
+
+        // 添加一些测试数据
         for (int i = 1; i < 1000; i++)
         {
-            if (!dictionary.ContainsKey(i.ToString()))
-            {
-                dictionary.Add(i.ToString(), i.ToString());
-            }
+            dictionary.Add(i.ToString(), i.ToString());
             list.Add(i.ToString());
             hashSet.Add(i.ToString());
         }
-        Console.Write("-------------------Testing dictionary--------------------\r\n");
+
+        // 开始测试Dictionary
+        Console.Write("------------------Testing dictionary------------------\r\n");
+        // 开始时间，取程序运行到此处的时间
         DateTime start = DateTime.Now;
         for (int i = 1; i < 1000; i++)
         {
             string str = null;
             dictionary.TryGetValue(i.ToString(), out str);
         }
+        // 结束时间，取程序运行到此处的时间
         DateTime end = DateTime.Now;
         TimeSpan span = end - start;
         StringBuilder log = new StringBuilder("------------------Using Time: ");
         log.Append(span.TotalMilliseconds.ToString()).Append("ms------------------\r\n");
         Console.Write(log);
-        Console.Write("-------------------Testing List--------------------\r\n");
+
+        // 开始测试List
+        Console.Write("------------------Testing List------------------\r\n");
+        // 开始时间，取程序运行到此处的时间
         start = DateTime.Now;
         for (int i = 1; i < 1000; i++)
         {
@@ -47,30 +55,31 @@ class Program
                 }
             }
         }
+        // 结束时间，取程序运行到此处的时间
         end = DateTime.Now;
         span = start - end;
         log.Clear();
         log.Append("------------------").Append(span.TotalMilliseconds).Append("ms------------------\r\n");
         Console.Write(log);
-        Console.Write("-------------------Testing HashSet--------------------\r\n");
+
+        // 开始测试HashSet
+        Console.Write("------------------Testing HashSet------------------\r\n");
+        // 开始时间，取程序运行到此处的时间
         start = DateTime.Now;
         for (int i = 1; i < 1000; i++)
         {
-            string str = null;
-            foreach (string obj in hashSet)
+            if (hashSet.Contains(i.ToString()))
             {
-                if (null != obj && i.ToString() == obj)
-                {
-                    str = obj;
-                }
+
             }
         }
+        // 结束时间，取程序运行到此处的时间
         end = DateTime.Now;
         span = end - start;
         log.Clear();
         log.Append("------------------").Append(span.TotalMilliseconds).Append("ms------------------\r\n");
         Console.Write(log);
-
+        
         /// 测试结果
         /// -------------------Testing dictionary--------------------
         /// ------------------Using Time: 0ms------------------
