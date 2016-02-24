@@ -26,13 +26,29 @@ public class Person
     /// </summary>
     public float Weight { get; private set; }
 
-    delegate void ChangedSexHandler(string sex);
+    /// <summary>
+    /// 性别发生改变时候的委托
+    /// </summary>
+    /// <param name="sex"></param>
+    public delegate void ChangedSexHandler(string sex);
 
-    delegate void ChangedAgeHandler(int age);
+    /// <summary>
+    /// 年龄发生改变时候的委托
+    /// </summary>
+    /// <param name="age"></param>
+    public delegate void ChangedAgeHandler(int age);
 
-    delegate void ChangedHeightHandler(float height);
+    /// <summary>
+    /// 身高发生改变时候的委托
+    /// </summary>
+    /// <param name="height"></param>
+    public delegate void ChangedHeightHandler(float height);
 
-    delegate void ChangedWeightHandler(float weight);
+    /// <summary>
+    /// 体重发生改变时候的委托
+    /// </summary>
+    /// <param name="weight"></param>
+    public delegate void ChangedWeightHandler(float weight);
 
     /// <summary>
     /// 性别发生改变
