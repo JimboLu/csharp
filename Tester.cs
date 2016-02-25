@@ -15,6 +15,9 @@ public class Tester
 
     }
 
+    /// <summary>
+    /// Dictionary<TKey, TValue> 性能测试
+    /// </summary>
     public void TestDictionary()
     {
         // 实例化
@@ -130,6 +133,9 @@ public class Tester
          */
     }
 
+    /// <summary>
+    /// List<T> 性能测试
+    /// </summary>
     public void TestList()
     {
         // 实例化
@@ -236,6 +242,9 @@ public class Tester
          */
     }
 
+    /// <summary>
+    /// HashSet<T> 性能测试
+    /// </summary>
     public void TestHashSet()
     {
         // 实例化
