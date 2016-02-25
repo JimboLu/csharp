@@ -20,18 +20,30 @@ class Program
         Console.ReadLine();
 
         /* 测试结果
-        --------Testing dictionary--------
-        --------Using Time: 0ms--------
-        --------Testing List--------
-        --------Using Time: 670.8012ms--------
-        --------Testing HashSet--------
-        --------Using Time: 0ms-------- 
+         * --------Testing dictionary--------
+         * Add Useing Time: 15.6ms
+         * Delete Useing Time: 0ms
+         * Change Using Time: 0ms
+         * Check Using Time: 0ms
+         * All Using Time: 15.6ms
+         * --------Testing List--------
+         * Add Using Time: 0ms
+         * Delete Using Time: 31.2ms
+         * Change Using Time: 0ms
+         * Check Using Time: 7070.8127ms
+         * All Using Time: 7102.0127ms
+         * --------Testing HashSet--------
+         * Add Using Time: 15.6ms
+         * Delete Using Time: 0ms
+         * Change Using Time: 0ms
+         * Check Using Time: 0ms
+         * All Using Time: 15.6ms
 
            结论
         1、Dictionary<TKey, TValue>、List<T>、HashSet<T>都是顺序存储，因为内部提供了迭代器。
         2、但是Dictionary<TKey, TValue>和HashSet<T>都是根据HashCode来选择存储位置的，
         所以能提供更高效的查询速度，最理想的查询时间复杂度是O(1). */
-        
+
         tester.TestReflection();
         Console.ReadLine();
 
