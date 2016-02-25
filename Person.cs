@@ -2,7 +2,6 @@
 
 /// <summary>
 /// Person类
-/// 
 /// </summary>
 public class Person
 {
