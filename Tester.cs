@@ -381,34 +381,35 @@ public class Tester
             Console.Write("事件名: " + ei.Name + "\r\n");
         }
 
-        /// 测试结果
-        /// 属性名 ：sex
-        /// 属性名 ：age
-        /// 属性名 ：height
-        /// 属性名 ：weight
-        /// 方法名 ：get_sex
-        /// 方法名 ：get_age
-        /// 方法名 ：get_height
-        /// 方法名 ：get_weight
-        /// 方法名 ：add_changedSex
-        /// 方法名 ：remove_changedSex
-        /// 方法名 ：add_changedAge
-        /// 方法名 ：remove_changedAge
-        /// 方法名 ：add_changedHeight
-        /// 方法名 ：remove_changedHeight
-        /// 方法名 ：add_changedWeight
-        /// 方法名 ：remove_changedWeight
-        /// 方法名 ：SetSex
-        /// 方法名 ：SetAge
-        /// 方法名 ：SetHeight
-        /// 方法名 ：SetWeight
-        /// 方法名 ：ToString
-        /// 方法名 ：Equals
-        /// 方法名 ：GetHashCode
-        /// 方法名 ：GetType
-        /// 事件名 ：changedSex
-        /// 事件名 ：changedAge
-        /// 事件名 ：changedHeight
-        /// 事件名 ：changedWeight
+        /* 测试结果
+         * 属性名 ：sex
+         * 属性名 ：age
+         * 属性名 ：height
+         * 属性名 ：weight
+         * 方法名 ：get_sex
+         * 方法名 ：get_age
+         * 方法名 ：get_height
+         * 方法名 ：get_weight
+         * 方法名 ：add_changedSex
+         * 方法名 ：remove_changedSex
+         * 方法名 ：add_changedAge
+         * 方法名 ：remove_changedAge
+         * 方法名 ：add_changedHeight
+         * 方法名 ：remove_changedHeight
+         * 方法名 ：add_changedWeight
+         * 方法名 ：remove_changedWeight
+         * 方法名 ：SetSex
+         * 方法名 ：SetAge
+         * 方法名 ：SetHeight
+         * 方法名 ：SetWeight
+         * 方法名 ：ToString
+         * 方法名 ：Equals
+         * 方法名 ：GetHashCode
+         * 方法名 ：GetType
+         * 事件名 ：changedSex
+         * 事件名 ：changedAge
+         * 事件名 ：changedHeight
+         * 事件名 ：changedWeight
+         */
     }
 }
