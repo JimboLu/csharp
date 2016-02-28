@@ -47,33 +47,10 @@ public class Tester
         log.Append(span.TotalMilliseconds).Append("ms");
         Console.WriteLine(log);
 
-        // 记录测试删除开始时间
-        DateTime deleteStart = DateTime.Now;
-
-        // 删
-        for (int i = 0; i < 10000; i++)
-        {
-            dictionary.Remove(i);
-        }
-
-        // 记录测试删除结束时间
-        DateTime deleteEnd = DateTime.Now;
-
-        // 打印日志
-        span = deleteEnd - deleteStart;
-        log.Clear();
-        log.Append("Delete Useing Time: ").Append(span.TotalMilliseconds).
-            Append("ms");
-        Console.WriteLine(log);
-
         // 记录测试改开始时间
         DateTime changeStart = DateTime.Now;
 
         // 改
-        for (int i = 0; i < 10000; i++)
-        {
-            dictionary.Add(i, i.ToString());
-        }
         for (int i = 0; i < dictionary.Count; i++)
         {
             dictionary[i] = (i + 1).ToString();
@@ -123,12 +100,31 @@ public class Tester
             Append("ms");
         Console.WriteLine(log);
 
+        // 记录测试删除开始时间
+        DateTime deleteStart = DateTime.Now;
+
+        // 删
+        for (int i = 0; i < 10000; i++)
+        {
+            dictionary.Remove(i);
+        }
+
+        // 记录测试删除结束时间
+        DateTime deleteEnd = DateTime.Now;
+
+        // 打印日志
+        span = deleteEnd - deleteStart;
+        log.Clear();
+        log.Append("Delete Useing Time: ").Append(span.TotalMilliseconds).
+            Append("ms");
+        Console.WriteLine(log);
+
         /* 测试结果
          * --------Testing dictionary--------
          * Add Useing Time: 15.6ms
-         * Delete Useing Time: 0ms
          * Change Using Time: 0ms
          * Check Using Time: 0ms
+         * Delete Useing Time: 0ms
          * All Using Time: 15.6ms
          */
     }
@@ -168,30 +164,10 @@ public class Tester
         // 记录删开始时间
         DateTime deleteStart = DateTime.Now;
 
-        // 删
-        for (int i = 0; i < 10000; i++)
-        {
-            list.Remove(i.ToString());
-        }
-
-        // 记录删结束时间
-        DateTime deleteEnd = DateTime.Now;
-
-        // 打印日志
-        span = deleteEnd - deleteStart;
-        log.Clear();
-        log.Append("Delete Using Time: ").Append(span.TotalMilliseconds).
-            Append("ms");
-        Console.WriteLine(log);
-
         // 记录改开始时间
         DateTime changeStart = DateTime.Now;
 
         // 改
-        for (int i = 0; i < 10000; i++)
-        {
-            list.Add(i.ToString());
-        }
         for (int i = 0; i < 10000; i++)
         {
             list[i] = (i + 1).ToString();
@@ -225,6 +201,22 @@ public class Tester
             Append("ms");
         Console.WriteLine(log);
 
+        // 删
+        for (int i = 0; i < 10000; i++)
+        {
+            list.Remove(i.ToString());
+        }
+
+        // 记录删结束时间
+        DateTime deleteEnd = DateTime.Now;
+
+        // 打印日志
+        span = deleteEnd - deleteStart;
+        log.Clear();
+        log.Append("Delete Using Time: ").Append(span.TotalMilliseconds).
+            Append("ms");
+        Console.WriteLine(log);
+
         // 结束时间，取程序运行到此处的时间
         DateTime end = DateTime.Now;
         span = end - start;
@@ -235,9 +227,9 @@ public class Tester
         /* 测试结果
          * --------Testing List--------
          * Add Using Time: 0ms
-         * Delete Using Time: 31.2ms
          * Change Using Time: 0ms
          * Check Using Time: 7070.8127ms
+         * Delete Using Time: 31.2ms
          * All Using Time: 7102.0127ms
          */
     }
@@ -276,31 +268,11 @@ public class Tester
 
         // 记录开始测试删的开始时间
         DateTime deleteStart = DateTime.Now;
-        
-        // 删
-        for (int i = 0; i < 10000; i++)
-        {
-            hashSet.Remove(i.ToString());
-        }
-
-        // 记录开始测试删的结束时间
-        DateTime deleteEnd = DateTime.Now;
-
-        // 打印日志
-        span = deleteEnd - deleteStart;
-        log.Clear();
-        log.Append("Delete Using Time: ").Append(span.TotalMilliseconds).
-            Append("ms");
-        Console.WriteLine(log);
 
         // 记录开始测试改的时间
         DateTime changeStart = DateTime.Now;
 
         // 改
-        for (int i = 0; i < 10000; i++)
-        {
-            hashSet.Add(i.ToString());
-        }
         for (int i = 0; i < 10000; i++)
         {
             hashSet.Remove(i.ToString());
@@ -339,6 +311,22 @@ public class Tester
             Append("ms");
         Console.WriteLine(log);
 
+        // 删
+        for (int i = 0; i < 10000; i++)
+        {
+            hashSet.Remove(i.ToString());
+        }
+
+        // 记录开始测试删的结束时间
+        DateTime deleteEnd = DateTime.Now;
+
+        // 打印日志
+        span = deleteEnd - deleteStart;
+        log.Clear();
+        log.Append("Delete Using Time: ").Append(span.TotalMilliseconds).
+            Append("ms");
+        Console.WriteLine(log);
+
         // 结束时间，取程序运行到此处的时间
         DateTime end = DateTime.Now;
 
@@ -353,9 +341,9 @@ public class Tester
          *
          * --------Testing HashSet--------
          * Add Using Time: 15.6ms
-         * Delete Using Time: 0ms
          * Change Using Time: 0ms
          * Check Using Time: 0ms
+         * Delete Using Time: 0ms
          * All Using Time: 15.6ms
          */
     }
